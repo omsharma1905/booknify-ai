@@ -4,6 +4,7 @@ node_modules/
 # Env files
 .env
 .env.local
+backend/.env
 .env.production
 
 # Build outputs
