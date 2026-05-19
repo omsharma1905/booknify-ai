@@ -2,9 +2,6 @@ const { GoogleGenAI } = require("@google/genai");
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-// @desc    Generate a book outline
-// @route   POST /api/ai/generate-outline
-// @access  Private
 const generateOutline = async (req, res) => {
     try {
         const { topic, style, numChapters, description } = req.body;
@@ -84,9 +81,6 @@ Generate the outline now:`;
     }
 };
 
-// @desc    Generate content for a chapter
-// @route   POST /api/ai/generate-chapter-content
-// @access  Private
 const generateChapterContent = async (req, res) => {
     try {
         const { chapterTitle, chapterDescription, style } = req.body;
