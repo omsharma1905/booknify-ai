@@ -1,8 +1,5 @@
 const Book = require("../models/Book");
 
-//@desc    Create a new book
-//@route   POST /api/books
-//@access  Private
 const createBook = async (req, res) => {
     try {
         const { title, author, subtitle, chapters } = req.body;
@@ -28,9 +25,6 @@ const createBook = async (req, res) => {
     }
 };
 
-//@desc    Get all books for a user
-//@route   GET /api/books
-//@access  Private
 const getBooks = async (req, res) => {
     try {
         const books = await Book.find({ userId: req.user._id }).sort({
@@ -44,9 +38,6 @@ const getBooks = async (req, res) => {
     }
 };
 
-//@desc    Get a single book by ID
-//@route   GET /api/books/:id
-//@access  Private
 const getBookById = async (req, res) => {
     try {
         const book = await Book.findById(req.params.id);
@@ -68,9 +59,6 @@ const getBookById = async (req, res) => {
     }
 };
 
-//@desc    Update a book
-//@route   PUT /api/books/:id
-//@access  Private
 const updateBook = async (req, res) => {
     try {
         const book = await Book.findById(req.params.id);
@@ -98,9 +86,6 @@ const updateBook = async (req, res) => {
     }
 };
 
-//@desc    Delete a book
-//@route   DELETE /api/books/:id
-//@access  Private
 const deleteBook = async (req, res) => {
     try {
         const book = await Book.findById(req.params.id);
@@ -124,9 +109,6 @@ const deleteBook = async (req, res) => {
     }
 };
 
-//@desc    Update a book's cover image
-//@route   PUT /api/books/cover/:id
-//@access  Private
 const updateBookCover = async (req, res) => {
     try {
         const book = await Book.findById(req.params.id);
