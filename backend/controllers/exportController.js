@@ -17,7 +17,6 @@ const fs = require("fs");
 
 const md = new MarkdownIt();
 
-//Typography configuration matching the PDF export
 const DOCX_STYLES = {
     fonts: {
         body: "Charter",
@@ -225,7 +224,6 @@ const exportAsDocument = async (req, res) => {
 
         const sections = [];
 
-        //Cover page with image if available
         const coverPage = [];
 
         if (book.coverImage && !book.coverImage.includes("pravatar")) {
@@ -243,15 +241,14 @@ const exportAsDocument = async (req, res) => {
                         })
                     );
 
-                    //Add image centered on page
                     coverPage.push(
                         new Paragraph({
                             children: [
                                 new ImageRun({
                                     data: imageBuffer,
                                     transformation: {
-                                        width: 400, //width in pixels
-                                        height: 500, //height in pixels
+                                        width: 400,
+                                        height: 500,
                                     },
                                 }),
                             ],
@@ -260,7 +257,6 @@ const exportAsDocument = async (req, res) => {
                         })
                     );
 
-                    //Page break after cover
                     coverPage.push(
                         new Paragraph({
                             text: "",
@@ -275,10 +271,8 @@ const exportAsDocument = async (req, res) => {
 
         sections.push(...coverPage);
 
-        //Title page section
         const titlePage = [];
 
-        //Main title
         titlePage.push(
             new Paragraph({
                 children: [
@@ -295,7 +289,6 @@ const exportAsDocument = async (req, res) => {
             })
         );
 
-        //Subtitle if exists
         if (book.subtitle && book.subtitle.trim()) {
             titlePage.push(
                 new Paragraph({
@@ -313,7 +306,6 @@ const exportAsDocument = async (req, res) => {
             );
         }
 
-        //Author
         titlePage.push(
             new Paragraph({
                 children: [
@@ -329,7 +321,6 @@ const exportAsDocument = async (req, res) => {
             })
         );
 
-        //Decorative line
         titlePage.push(
             new Paragraph({
                 text: "",
@@ -348,10 +339,8 @@ const exportAsDocument = async (req, res) => {
 
             sections.push(...titlePage);
 
-        //Process chapters
         book.chapters.forEach((chapter, index) => {
             try {
-                //Page break before each chapter (except first)
                 if (index > 0) {
                     sections.push(
                         new Paragraph({
@@ -361,7 +350,6 @@ const exportAsDocument = async (req, res) => {
                     );
                 }
 
-                //Chapter title
                 sections.push(
                     new Paragraph({
                         children: [
@@ -380,7 +368,6 @@ const exportAsDocument = async (req, res) => {
                     })
                 );
 
-                //Chapter content
                 const contentParagraphs = processMarkdownToDocx(chapter.content || "");
                 sections.push(...contentParagraphs);
             } catch (chapterError) {
@@ -388,14 +375,13 @@ const exportAsDocument = async (req, res) => {
             }
         });
 
-        // Create the document
         const doc = new Document({
             sections: [
                 {
                     properties: {
                         page: {
                             margin: {
-                                top: 1440, // 1 inch
+                                top: 1440,
                                 right: 1440,
                                 bottom: 1440,
                                 left: 1440,
@@ -407,10 +393,8 @@ const exportAsDocument = async (req, res) => {
             ],
         });
 
-        // Generate the document buffer
         const buffer = await Packer.toBuffer(doc);
 
-        // Send the document
         res.setHeader(
             "Content-Type",
             "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -433,7 +417,6 @@ const exportAsDocument = async (req, res) => {
     }
 };
 
-//Typography configuration for modern ebook styling
 const TYPOGRAPHY = {
     fonts: {
         serif: "Times-Roman",
