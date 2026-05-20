@@ -8,7 +8,6 @@ const {
 
 const { protect } = require("../middlewares/authMiddleware");
 
-// Apply protect middleware to all AI routes
 router.use(protect);
 
 router.post("/generate-outline", generateOutline);
