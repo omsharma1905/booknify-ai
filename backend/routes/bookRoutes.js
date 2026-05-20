@@ -13,7 +13,6 @@ const {
 const { protect } = require("../middlewares/authMiddleware");
 const upload = require("../middlewares/uploadMiddleware");
 
-// Apply protect middleware to all book routes
 router.use(protect);
 
 router.route("/")
