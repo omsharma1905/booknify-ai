@@ -11,7 +11,6 @@ import { API_PATHS } from "../utils/apiPath";
 import CreateBookModal from "../components/modals/CreateBookModal";
 import BookCard from "../components/cards/BookCard";
 
-// Skeleton Loader for Book Card
 const BookCardSkeleton = () => (
   <div className="bg-white border border-slate-200 rounded-lg shadow-sm animate-pulse">
     <div className="w-full aspect-16/25 bg-slate-200 rounded-t-lg" />
