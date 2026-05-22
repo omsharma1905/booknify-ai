@@ -37,7 +37,6 @@ const EditorPage = () => {
   const fileInputRef = useRef(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // AI Modal State 
   const [isOutlineModalOpen, setIsOutlineModalOpen] = useState(false);
   const [aiTopic, setAiTopic] = useState("");
   const [aiStyle, setAiStyle] = useState("Informative");
