@@ -8,13 +8,11 @@ const Hero = () => {
 
   return (
     <article className="bg-linear-to-br from-violet-50 via-white to-purple-50 overflow-hidden relative">
-      {/* Floating background elements */}
       <div className="size-64 bg-violet-200/30 backdrop-blur-3xl rounded-full absolute left-10 top-20 animate-pulse" />
       <div className="size-96 bg-purple-200/20 backdrop-blur-3xl rounded-full absolute right-10 bottom-20 animate-pulse delay-700" />
 
       <div className="max-w-7xl px-6 lg:px-8 py-16 sm:py-20 lg:py-32 mx-auto relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
-          {/* Hero banner */}
           <div className="order-1 lg:order-2 lg:pl-8 relative">
             <div className="relative">
               <div className="bg-linear-to-r from-violet-600 to-purple-600 opacity-20 blur-2xl rounded-3xl absolute -inset-4" />
@@ -60,7 +58,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Content column */}
           <section className="order-2 lg:order-1 max-w-xl space-y-6 lg:space-y-8">
             <div className="bg-white/80 backdrop-blur-sm border border-violet-100 rounded-full px-4 py-2 shadow-sm inline-flex items-center gap-x-2 w-fit">
               <Sparkles className="size-4 text-violet-600" />
