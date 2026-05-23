@@ -9,7 +9,6 @@ const ViewBook = ({ book }) => {
 
   const selectedChapter = book.chapters[selectedChapterIndex];
 
-  // Format content with proper paragraphs and styling
   const formatContent = (content) => {
     return content
       .split('\n\n')
@@ -33,9 +32,7 @@ const ViewBook = ({ book }) => {
         onClose={() => setSidebarOpen(false)}
       />
 
-      {/* Main content */}
       <main className="flex-1 flex flex-col overflow-hidden">
-        {/* Header */}
         <header className="border-b border-gray-100 p-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <button
@@ -51,7 +48,6 @@ const ViewBook = ({ book }) => {
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Font side controls */}
             <div className="mr-4 flex items-center gap-2">
               <button
                 onClick={() => setFontSize(Math.max(14, fontSize - 2))}
@@ -70,15 +66,12 @@ const ViewBook = ({ book }) => {
           </div>
         </header>
 
-        {/* Reading area */}
         <div className="flex-1 overflow-y-auto">
           <div className="max-w-4xl px-6 py-12 mx-auto">
-            {/* Chapter Title */}
             <h1 className="text-xl md:text-3xl font-bold mb-8 leading-tight">
               {selectedChapter.title}
             </h1>
 
-            {/* Chapter Content */}
             <div
               className="reading-content"
               style={{
@@ -91,7 +84,6 @@ const ViewBook = ({ book }) => {
               }}
             />
 
-            {/* Navigation */}
             <div className="border-t border-gray-200 pt-8 mt-16 flex justify-between items-center">
               <button
                 onClick={() =>
