@@ -30,13 +30,10 @@ function Footer() {
 
     return (
         <footer className="relative bg-linear-to-br from-gray-950 via-gray-950 to-violet-950 text-white">
-            {/* Subtle background glow */}
             <div className="pointer-events-none absolute top-0 right-0 size-96 bg-violet-500/10 rounded-full blur-3xl" />
 
             <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-                {/* Main footer content */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 py-14 lg:py-16">
-                    {/* Brand */}
                     <div className="lg:col-span-2 space-y-6">
                         <a
                             href="/"
@@ -56,7 +53,6 @@ function Footer() {
                             narratives with the world — effortlessly.
                         </p>
 
-                        {/* Social icons */}
                         <ul className="flex items-center gap-3 pt-2">
                             {/* eslint-disable-next-line no-unused-vars */}
                             {socials.map(({ href, ariaLabel, icon: Icon }, index) => (
@@ -75,7 +71,6 @@ function Footer() {
                         </ul>
                     </div>
 
-                    {/* Quick Links */}
                     <nav className="lg:justify-self-end">
                         <h3 className="text-sm font-semibold mb-4 text-white">
                             Quick Links
@@ -112,7 +107,6 @@ function Footer() {
                     </nav>
                 </div>
 
-                {/* Bottom bar */}
                 <div className="border-t border-white/10 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <p className="text-xs sm:text-sm text-gray-400 text-center sm:text-left">
                         © {new Date().getFullYear()} Booknify AI. All rights reserved.
