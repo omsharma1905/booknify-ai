@@ -6,7 +6,6 @@ import { CSS } from "@dnd-kit/utilities";
 
 import Button from "../ui/Button";
 
-//SortableItem Component
 const SortableItem = ({
   chapter,
   index,
