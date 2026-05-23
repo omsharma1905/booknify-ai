@@ -11,14 +11,12 @@ function Features() {
             id="features"
             className="bg-linear-to-br from-violet-50 via-white to-purple-50 py-16 sm:py-20 lg:py-32 overflow-hidden relative"
         >
-            {/* Mid-left accent beside heading */}
             <div className="pointer-events-none absolute top-[38%] left-[12%] -translate-y-1/2">
                 <div className="size-56 bg-violet-400/35 rounded-full blur-[120px]" />
                 <div className="absolute -top-16 -left-12 size-40 bg-purple-400/30 rounded-full blur-[100px]" />
                 <div className="absolute top-24 left-16 size-32 bg-fuchsia-400/25 rounded-full blur-[90px]" />
             </div>
 
-            {/* Supporting background accents (right + bottom only) */}
             <div className="pointer-events-none absolute top-1/4 -right-32 size-128 bg-purple-400/30 rounded-full blur-[150px]" />
             <div className="pointer-events-none absolute -bottom-24 left-1/3 size-120 bg-violet-400/25 rounded-full blur-[140px]" />
 
@@ -45,7 +43,6 @@ function Features() {
                     </p>
                 </header>
 
-                {/* Grid wrapper with focused glow */}
                 <div className="relative">
                     <div className="absolute inset-0 -z-10 bg-radial-gradient from-violet-300/40 via-transparent to-transparent blur-2xl" />
 
