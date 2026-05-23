@@ -17,7 +17,6 @@ const ViewChapterSidebar = ({
         />
       )}
 
-      {/* Sidebar */}
       <div
         className={`fixed lg:relative left-0 top-0 h-full w-80 bg-white border-r border-e-gray-100 transform transition-transform duration-300 ease-in-out z-50 
         ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}>
